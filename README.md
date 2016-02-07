@@ -7,7 +7,7 @@ This is an example setup using:
 - `docker-machine 0.6.0`
 
 Compose was used to setup 4 services: `postgres`, `redis`, `worker` and `web`.
-They are connected with a common network named `backend`. `worker` and `web` are
+They are connected with a common network named `backend`. The containers `worker` and `web` are
 typical app services connected to storage services `postgres` and `redis`. The
 storage services use a common volume named `data`.
 
