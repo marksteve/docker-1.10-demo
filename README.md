@@ -11,6 +11,8 @@ They are connected with a common network named `backend`. `worker` and `web` are
 typical app services connected to storage services `postgres` and `redis`. The
 storage services use a common volume named `data`.
 
+## Instructions
+
 1. Create a docker machine
 
 2. Use docker machine
@@ -21,7 +23,7 @@ storage services use a common volume named `data`.
 
 2. Create a .env file:
 
-  ```
+  ```shell
   POSTGRES_PASSWORD=password
   POSTGRES_DB=app
   REDIS_URL=redis://redis:6379/0
@@ -41,7 +43,7 @@ storage services use a common volume named `data`.
 
 5. Setup postgres
 
-  ```
+  ```shell
   docker exec -ti dockersetup_postgres bash
   su postgres
   echo "create extension store" | psql app
