@@ -35,7 +35,7 @@ storage services use a common volume named `data`.
   eval $(docker-machine env your-machine-name)
   ```
 
-2. Create a .env file:
+3. Create a .env file:
 
   ```shell
   POSTGRES_PASSWORD=password
@@ -43,24 +43,31 @@ storage services use a common volume named `data`.
   REDIS_URL=redis://redis:6379/0
   ```
 
-3. Build app image
+4. Build app image
 
   ```shell
   docker build --rm -t app .
   ```
 
-4. Create containers
+5. Run postgres service
+
+  ```shell
+  docker-compose up -d postgres
+  ```
+
+6. Setup postgres
+
+  ```shell
+  docker exec -ti dockersetup_postgres_1 bash
+  su postgres
+  echo "create extension hstore" | psql app
+  echo "create table items (item hstore)" | psql app
+  ```
+
+7. Run remaining services
 
   ```shell
   docker-compose up -d
   ```
 
-5. Setup postgres
-
-  ```shell
-  docker exec -ti dockersetup_postgres bash
-  su postgres
-  echo "create extension store" | psql app
-  echo "create table items (item hstore)" | psql app
-  ```
 
