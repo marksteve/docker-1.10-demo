@@ -13,15 +13,15 @@ storage services use a common volume named `data`.
 
 ## Endpoints
 
-### GET `/`
+### GET `:8000/`
 
 > Responds with `Hello, world`.
 
-### POST `/items`
+### POST `:8000/items`
 
 > Enqueues a `record_item` job. Accepts a json object with string keys/values.
 
-### GET `/items`
+### GET `:8000/items`
 
 > Retrieves recorded items
 
