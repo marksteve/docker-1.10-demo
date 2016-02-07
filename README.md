@@ -19,7 +19,7 @@ storage services use a common volume named `data`.
 
 ### POST `/items`
 
-> Enqueues a `record_item` job. Accepts an arbitrary single-level json object.
+> Enqueues a `record_item` job. Accepts a json object with string keys/values.
 
 ### GET `/items`
 
