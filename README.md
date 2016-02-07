@@ -11,6 +11,20 @@ They are connected with a common network named `backend`. The containers `worker
 typical app services connected to storage services `postgres` and `redis`. The
 storage services use a common volume named `data`.
 
+## Endpoints
+
+### GET `/`
+
+> Responds with `Hello, world`.
+
+### POST `/items`
+
+> Enqueues a `record_item` job. Accepts an arbitrary single-level json object.
+
+### GET `/items`
+
+> Retrieves recorded items
+
 ## Instructions
 
 1. Create a docker machine
